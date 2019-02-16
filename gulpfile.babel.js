@@ -113,6 +113,7 @@ gulp.task('scripts', () =>
       './app/scripts/material.min.js',
       './app/scripts/imagesloaded.pkgd.min.js',
       './app/scripts/masonry.pkgd.min.js',
+      './app/scripts/isotope.pkgd.js',
       './app/scripts/main.js'
       // Other scripts
     ])

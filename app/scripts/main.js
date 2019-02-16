@@ -83,9 +83,55 @@
     msnry.layout();
   });
 
-  var grid = document.querySelector('.grid');
-
   
+  
+
+// element argument can be a selector string
+//   for an individual element
+var iso = new Isotope( '.grid', {
+  itemSelector: '.grid-item',
+  layoutMode: 'masonry',
+  transitionDuration: '0.8s',
+  percentPosition: true,
+  masonry: {
+    // use outer width of grid-sizer for columnWidth
+    columnWidth: '.grid-item',
+    gutter: 16
+  },
+   hiddenStyle: {
+    opacity: 0
+  },
+  visibleStyle: {
+    opacity: 1
+  }
+});
+
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function( itemElem ) {
+    var number = itemElem.querySelector('.number').textContent;
+    return parseInt( number, 10 ) > 50;
+  },
+  // show if name ends with -ium
+  ium: function( itemElem ) {
+    var name = itemElem.querySelector('.name').textContent;
+    return name.match( /ium$/ );
+  }
+};
+
+var filtersElem = document.querySelector('.filter-menu');
+filtersElem.addEventListener( 'click', function( event ) {
+  // only work with buttons
+  if ( !matchesSelector( event.target, 'a' ) ) {
+    return;
+  }
+  var filterValue = event.target.getAttribute('data-filter');
+  // use matching filter function
+  filterValue = filterFns[ filterValue ] || filterValue;
+  iso.arrange({ filter: filterValue });
+});
+
+
   
 }
 )();
