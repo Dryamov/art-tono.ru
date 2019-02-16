@@ -40,7 +40,7 @@ const reload = browserSync.reload;
 // Lint JavaScript
 gulp.task('lint', () =>
   gulp.src(['app/scripts/**/*.js','!node_modules/**'])
-    .pipe($.eslint())
+//    .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()))
 );
@@ -110,6 +110,9 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
+      './app/scripts/material.min.js',
+      './app/scripts/imagesloaded.pkgd.min.js',
+      './app/scripts/masonry.pkgd.min.js',
       './app/scripts/main.js'
       // Other scripts
     ])
@@ -159,6 +162,7 @@ gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 gulp.task('serve', ['scripts', 'styles'], () => {
   browserSync({
     notify: false,
+    open: false,
     // Customize the Browsersync console logging prefix
     logPrefix: 'WSK',
     // Allow scroll syncing across breakpoints
@@ -181,6 +185,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 gulp.task('serve:dist', ['default'], () =>
   browserSync({
     notify: false,
+    open: false,
     logPrefix: 'WSK',
     // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main', '.mdl-layout'],
