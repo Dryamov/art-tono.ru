@@ -161,8 +161,8 @@ footer {
 }
 
 .main-menu {
-  position: absolute;
-  right: 0px;
+/*   position: absolute;
+  right: 0px; */
 }
 
 .portfolio-header {
@@ -201,3 +201,52 @@ background-color: rgb(245, 245, 245);
 
 }
 
+
+.mdl-layout__content {
+/*   background-image: url(../images/art/pattern-6.JPG); */
+}
+
+.portfolio-header{
+    background-image: none;
+    background-color: rgb(245, 245, 245);
+}
+
+.main-menu .mdl-navigation__link {
+  font-size: 18px;
+}
+
+.portfolio-navigation-row .mdl-navigation__link {
+  font-size: 18px;
+}
+
+.portfolio-header div .mdl-layout__header-row {
+ justify-content: space-between;
+ max-width: 900px;
+ margin: auto;
+}
+
+.grid-item-big {
+  width: calc(100% - 16px);
+}
+
+.second-menu{
+ background-color: rgba(0,0,0,0.00)
+}
+
+.second-menu-holder {
+  background-color: rgba(0,0,0,0.08)
+}
+
+@media (max-width: 1024px) {
+.mdl-layout__header-row h3 {
+  margin-left: 65px;
+}}
+
+.mdl-card__title {
+  justify-content: center;
+}
+
+.mdl-card .mdl-card__title {
+  justify-content: left;
+  
+}

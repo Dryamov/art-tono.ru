@@ -260,7 +260,7 @@ footer {
   font-size: 18px;
 }
 
-.portfolio-header div .mdl-layout__header-row {
+.portfolio-header .second-menu-holder .mdl-layout__header-row {
  justify-content: space-between;
  max-width: 900px;
  margin: auto;
@@ -285,4 +285,10 @@ footer {
 
 .mdl-card__title {
   justify-content: center;
+}
+
+.portfolio-header div .mdl-layout__header-row {
+ justify-content: space-between;
+ max-width: 900px;
+ margin: auto;
 }
