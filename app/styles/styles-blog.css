@@ -250,3 +250,22 @@ background-color: rgb(245, 245, 245);
   justify-content: left;
   
 }
+
+.my-text-1{
+  font-size: 16px;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+h3{
+  text-align: left;
+}
+
+.center-2 {
+  justify-content: center !important;
+}
+.center-2 h2{
+  font-weight: 400;
+}
